@@ -94,8 +94,6 @@ CAuxPow::check (const uint256& hashAuxBlock, int nChainId,
         if (script.end() != std::search(pcHead + 1, script.end(),
                                         mmHeaderBegin, mmHeaderEnd))
             return error("Multiple merged mining headers in coinbase");
-        if (pcHead + sizeof(pchMergedMiningHeader) != pc)
-            return error("Merged mining header is not just before chain merkle root");
     }
     else
     {
